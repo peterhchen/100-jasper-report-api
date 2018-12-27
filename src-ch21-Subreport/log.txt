@@ -1,0 +1,65 @@
+
+C:\Tools\jasperreports-5.0.1\test>ant -f buildStyle.xml -Dmain-class=com.tutorialspoint.JasperReportFill 
+Buildfile: C:\Tools\jasperreports-5.0.1\test\buildStyle.xml
+
+clean-sample:
+   [delete] Deleting directory C:\Tools\jasperreports-5.0.1\test\classes
+   [delete] Deleting: C:\Tools\jasperreports-5.0.1\test\jasper_report_template.jasper
+
+compile:
+    [mkdir] Created dir: C:\Tools\jasperreports-5.0.1\test\classes
+    [javac] C:\Tools\jasperreports-5.0.1\test\baseBuild.xml:32: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 7 source files to C:\Tools\jasperreports-5.0.1\test\classes
+
+compilereportdesing:
+      [jrc] Compiling 1 report design files.
+      [jrc] log4j:WARN No appenders could be found for logger (net.sf.jasperreports.engine.xml.JRXmlDigesterFactory).
+      [jrc] log4j:WARN Please initialize the log4j system properly.
+      [jrc] File : C:\Tools\jasperreports-5.0.1\test\jasper_report_template.jrxml ... OK.
+
+run:
+     [echo] Running class : com.tutorialspoint.JasperReportFill
+     [java] log4j:WARN No appenders could be found for logger (net.sf.jasperreports.extensions.ExtensionsEnvironment).
+     [java] log4j:WARN Please initialize the log4j system properly.
+     [java] Exception in thread "main" net.sf.jasperreports.engine.JRRuntimeException: Error parsing template XML
+     [java] 	at net.sf.jasperreports.engine.xml.JRXmlTemplateLoader.loadTemplate(JRXmlTemplateLoader.java:203)
+     [java] 	at net.sf.jasperreports.engine.xml.JRXmlTemplateLoader.load(JRXmlTemplateLoader.java:236)
+     [java] 	at net.sf.jasperreports.engine.xml.JRXmlTemplateLoader.loadTemplate(JRXmlTemplateLoader.java:111)
+     [java] 	at net.sf.jasperreports.engine.fill.JRFillReportTemplate.loadTemplate(JRFillReportTemplate.java:109)
+     [java] 	at net.sf.jasperreports.engine.fill.JRFillReportTemplate.evaluate(JRFillReportTemplate.java:87)
+     [java] 	at net.sf.jasperreports.engine.fill.JRBaseFiller.collectTemplates(JRBaseFiller.java:1058)
+     [java] 	at net.sf.jasperreports.engine.fill.JRBaseFiller.collectTemplateStyles(JRBaseFiller.java:1081)
+     [java] 	at net.sf.jasperreports.engine.fill.JRBaseFiller.collectStyles(JRBaseFiller.java:1029)
+     [java] 	at net.sf.jasperreports.engine.fill.JRBaseFiller.loadStyles(JRBaseFiller.java:998)
+     [java] 	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:879)
+     [java] 	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:841)
+     [java] 	at net.sf.jasperreports.engine.fill.JRFiller.fill(JRFiller.java:88)
+     [java] 	at net.sf.jasperreports.engine.JasperFillManager.fill(JasperFillManager.java:653)
+     [java] 	at net.sf.jasperreports.engine.JasperFillManager.fillToFile(JasperFillManager.java:542)
+     [java] 	at net.sf.jasperreports.engine.JasperFillManager.fillToFile(JasperFillManager.java:494)
+     [java] 	at net.sf.jasperreports.engine.JasperFillManager.fillReportToFile(JasperFillManager.java:874)
+     [java] 	at com.tutorialspoint.JasperReportFill.main(Unknown Source)
+     [java] Caused by: org.xml.sax.SAXParseException; lineNumber: 8; columnNumber: 43; Element type "style" must be followed by either attribute specifications, ">" or "/>".
+     [java] 	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+     [java] 	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+     [java] 	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+     [java] 	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+     [java] 	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+     [java] 	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+     [java] 	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+     [java] 	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+     [java] 	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+     [java] 	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+     [java] 	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+     [java] 	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+     [java] 	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+     [java] 	at org.apache.commons.digester.Digester.parse(Digester.java:1916)
+     [java] 	at net.sf.jasperreports.engine.xml.JRXmlTemplateLoader.loadTemplate(JRXmlTemplateLoader.java:195)
+     [java] 	... 16 more
+
+viewFillReport:
+     [java] log4j:WARN No appenders could be found for logger (net.sf.jasperreports.view.JasperViewer).
+     [java] log4j:WARN Please initialize the log4j system properly.
+
+BUILD SUCCESSFUL
+Total time: 7 seconds
